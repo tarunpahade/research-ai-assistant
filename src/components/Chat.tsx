@@ -20,13 +20,13 @@ export const Chat: React.FC<ChatProps> = ({ name }) => {
     const pdfContent = localStorage.getItem(name);
 console.log(pdfContent);
 
-    const url = process
+    const url = "https://omj0m0.buildship.run/chatWithPdf"
     const data = {
       pdfContent: pdfContent,
       prompt: input,
     };
     try {
-      const response = await fetch(url, {
+      const response = await fetch(url!, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
