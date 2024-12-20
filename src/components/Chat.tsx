@@ -23,9 +23,11 @@ console.log(pdfContent);
     const url = "https://omj0m0.buildship.run/chatWithPdf"
     const data = {
       pdfContent: pdfContent,
-      prompt: input,
+      prompt: input+' paper details'+pdfContent,
     };
     try {
+      console.log("Sending request",pdfContent);
+      
       const response = await fetch(url!, {
         method: "POST",
         headers: {
