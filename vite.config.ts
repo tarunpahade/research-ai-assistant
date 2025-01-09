@@ -7,4 +7,8 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  build: {
+    outDir: '/app/research-ai-assistant', // Set this to your desired output directory
+  },
+
 });

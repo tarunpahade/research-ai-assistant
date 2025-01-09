@@ -12,7 +12,7 @@ interface ChatProps {
 
 export const Chat: React.FC<ChatProps> = ({ name }) => {
   const [messages, setMessages] = useState<Message[]>([]);
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState("Convert into JSON data no need of explaination or comments");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,7 +23,7 @@ console.log(pdfContent);
     const url = "https://omj0m0.buildship.run/chatWithPdf"
     const data = {
       pdfContent: pdfContent,
-      prompt: input+' paper details'+pdfContent,
+      prompt: input+' paper details '+pdfContent,
     };
     try {
       console.log("Sending request",pdfContent);
@@ -48,6 +48,7 @@ console.log(pdfContent);
       ]);
 
       setInput("");
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       alert("Error while featching response");
     }
